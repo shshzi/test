@@ -1,4 +1,11 @@
-- hosts: localhost
+- name: test
+  hosts: localhost
+  gather_facts: false
   tasks:
-    - debug:
-        var: hpeadmin
+    - name: e
+      set_fact:
+        hpeadmin_b64: "{{ hpeadmin | b64encode }}"
+
+    - name: p
+      debug:
+        msg: "{{ hpeadmin_b64 }}"
