@@ -4,7 +4,7 @@
   tasks:
     - name: e
       set_fact:
-        hpeadmin_b64: "{{ hpeadmin | b64encode }}"
+        hpeadmin_b64: "{{ ansible_password | b64encode }}"
 
     - name: p
       debug:
